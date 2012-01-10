@@ -1,0 +1,15 @@
+A barebones gem has been created in the <%= @gem_name %> directory.
+
+You should now:
+* Open up README.rdoc and put in a basic description of your gem
+* Open up <%= @gem_name %>.gemspec and fill in the summary, description,
+  authors, and email fields, and add any dependencies
+* Init a git repo (git init), add and commit everything
+* Create a github repo for the gem and push to it
+
+The lib/<%= @gem_name %>.rb file has a note to get you started on
+implementation, and the spec/ folder is ready for tests. They can be run by
+simply executing "rake".
+
+See the README for simple_gem on github for a brief overview of how to
+version, build, and deploy your gem.

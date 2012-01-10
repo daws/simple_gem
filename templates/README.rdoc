@@ -1,0 +1,7 @@
+= <%= @gem_name.titleize %>
+
+Put a description of the gem here.
+
+== Synopsis:
+
+ foo = <%= @gem_name.camelize %>.new

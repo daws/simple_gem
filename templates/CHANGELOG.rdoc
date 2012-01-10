@@ -1,0 +1,4 @@
+= <%= @gem_name.titleize %>
+
+== Version 0.0.0
+* Change information here

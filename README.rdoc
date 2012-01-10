@@ -1,0 +1,42 @@
+= Simple Gem
+
+Contains tools, libraries, and rake tasks for creating gems.
+
+Attempts to be as lightweight and non-intrusive as possible, minimizing code-gen
+
+== Creating a new gem
+
+=== Synopsis:
+
+ gem skeleton my_gem
+
+Note the output of the command - it will tell you to update the gemspec among a couple other things to get you started.
+
+The new gem may be built and tested out of the box.
+
+== Building a gem
+
+There are two rake tasks--build and build_dev--that let you create either a new permenant versioned build of the gem or a temporary development build.
+
+=== rake build
+
+To build a new permanent version, first update the lib/gem_name/version.rb file appropriately (major, minor, or build version) and/or CHANGELOG if there is one, then commit it and tag it with the new version number (you can do this with "rake tag"). Build the gem using "rake build" which will create a gem file in the gems/ directory. Then simply deploy it to the desired repository (ie. "gem push gems/my_gem-version.gem", or "gem inabox gems/my_gem-version.gem") and install it locally.
+
+Here's a quick synopsis:
+
+ vim lib/gem_name/version.rb  # update version number appropriately
+ vim CHANGELOG                # add change info
+ git add .
+ git commit
+ rake tag
+ git push origin master
+ git push --tags origin
+ rake build
+ gem push gems/gem_name-0.0.0.gem  # alternatively, "gem inabox gems/gem_name-0.0.0.gem"
+ gem install gem_name
+
+Note that once you build and deploy a gem, you shouldn't try to undo it - that should be a released version forever. If you need to fix an error, patch it, increment its build version, and deploy it using these same steps.
+
+=== rake build_dev
+
+At any time, you can run rake build_dev, which will add a patch version to the current version number and build a gem file into the gems_dev folder. Install it with "gem install gems_dev/my_gem-version.gem," and then you can use it in other projects to try it out before permanently versioning it.

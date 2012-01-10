@@ -1,0 +1,8 @@
+= Simple Gem
+
+== Version 0.0.0
+* Supports "gem skeleton" command to create a new gem
+* Supports "rake build" to build a new permanent versioned gemfile
+* Supports "rake build_dev" to build a temporary dev version of a gem
+* Supports "rake tag" to tag the current git repo with the current version number
+

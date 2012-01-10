@@ -1,0 +1,8 @@
+require 'bundler'
+Bundler.require(:rake)
+
+# Configure gem building
+require File.expand_path(File.join(File.dirname(__FILE__), 'lib', '<%= @gem_name %>', 'version'))
+SimpleGem.current_version = <%= @gem_name.camelize %>::VERSION
+SimpleGem.current_gemspec = '<%= @gem_name %>.gemspec'
+
