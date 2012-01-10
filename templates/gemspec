@@ -10,9 +10,9 @@ Gem::Specification.new do |s|
   s.date = %q{<%= Date.today %>}
   s.summary = %q{Summary of gem here.}
   s.description = %q{Description of gem here.}
-  s.authors = [ '<%= `git config user.name` %>' ]
-  s.email = %q{<%= `git config user.email` %>}
-  s.homepage = %q{https://github.com/<%= `git config github.user` %>/<%= @gem_name %>}
+  s.authors = [ '<%= `git config user.name`.strip %>' ]
+  s.email = %q{<%= `git config user.email`.strip %>}
+  s.homepage = %q{https://github.com/<%= `git config github.user`.strip %>/<%= @gem_name %>}
   s.require_paths = [ 'lib' ]
   
   # documentation

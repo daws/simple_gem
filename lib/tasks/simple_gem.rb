@@ -48,7 +48,7 @@ module SimpleGem
     end
     
     def build_production_gem
-      if !`git status -s`.empty?
+      if !`git status -s`.strip.empty?
         raise 'There are uncommitted changes in the tree - commit before building'
       end
     
@@ -57,7 +57,7 @@ module SimpleGem
 
     def tag(version)
       version ||= current_version
-      `git tag #{version}`
+      `git tag #{version}`.strip
     end
 
   end
