@@ -1,5 +1,8 @@
 = Simple Gem
 
+== Version 0.0.1
+* Stripping whitespace from code-gen to properly space generated code
+
 == Version 0.0.0
 * Supports "gem skeleton" command to create a new gem
 * Supports "rake build" to build a new permanent versioned gemfile
