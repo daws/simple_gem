@@ -14,6 +14,10 @@ Note the output of the command - it will tell you to update the gemspec among a 
 
 The new gem may be built and tested out of the box.
 
+=== Environment variables
+
+By default, the gem will be populated with a LICENSE.txt file containing the MIT license and a copyright with your global git user.name config value. You can override the copyright by setting the SIMPLE_GEM_LICENSE_COPYRIGHT environment variable.
+
 == Building a gem
 
 There are two rake tasks--build and build_dev--that let you create either a new permenant versioned build of the gem or a temporary development build.
