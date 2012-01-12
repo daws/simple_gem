@@ -1,5 +1,8 @@
 = Simple Gem
 
+== Version 0.0.2
+* Allowing license copyright to be set by environment variable
+
 == Version 0.0.1
 * Stripping whitespace from code-gen to properly space generated code
 
