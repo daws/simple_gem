@@ -1,4 +1,5 @@
 require 'rspec/core/rake_task'
+require 'rubygems/package'
 
 module SimpleGem
   class << self
@@ -36,8 +37,7 @@ module SimpleGem
         safe_create_dir(target_dir)
         spec = Gem::Specification.load(current_gemspec)
         spec.version = current_version
-        builder = Gem::Builder.new(spec)
-        gem_file = builder.build
+        gem_file = Gem::Package.build(spec)
         target_file = "#{target_dir}/#{gem_file}"
         File.rename gem_file, target_file
         puts "Successfully built #{gem_file} into #{target_dir}"

@@ -1,5 +1,8 @@
 = Simple Gem
 
+== Version 1.0.0
+* Updating to rubygems 2
+
 == Version 0.0.2
 * Allowing license copyright to be set by environment variable
 
