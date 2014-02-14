@@ -1,4 +1,3 @@
-require 'rspec/core/rake_task'
 require 'rubygems/package'
 
 module SimpleGem
@@ -30,10 +29,10 @@ module SimpleGem
     end
 
     def build_gem(target_dir)
-      print "Do you want to build version #{current_version} (Y/n): "
+      print "Do you want to build version #{current_version} (y/n): "
       input = STDIN.gets.strip
     
-      if input.to_s[0,1] == 'Y'
+      if input.downcase.start_with? 'y'
         safe_create_dir(target_dir)
         spec = Gem::Specification.load(current_gemspec)
         spec.version = current_version
@@ -43,13 +42,19 @@ module SimpleGem
         puts "Successfully built #{gem_file} into #{target_dir}"
         [ current_version, target_file ]
       else
-        raise %q{Aborting... update version file and run "rake build" again.}
+        puts %q{Aborting... update version file and run "rake build" again.}
+        exit
       end
     end
     
     def build_production_gem
       if !`git status -s`.strip.empty?
-        raise 'There are uncommitted changes in the tree - commit before building'
+        print 'There are uncommitted changes in the tree... are you sure you want to continue (y/n): '
+        response = STDIN.gets.strip
+        if !response.downcase.start_with? 'y'
+          puts 'Build aborted'
+          exit
+        end
       end
     
       build_gem 'gems'
@@ -62,10 +67,6 @@ module SimpleGem
 
   end
 end
-
-task :default => [ :spec ]
-
-RSpec::Core::RakeTask.new(:spec)
 
 desc 'Builds a gemfile for production (into gems/)'
 task :build do

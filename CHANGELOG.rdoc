@@ -1,5 +1,10 @@
 = Simple Gem
 
+== Version 1.1.0
+* Updated git status check to prompt whether you want to continue, instead of aborting
+* Tweaked prompts
+* Removed rspec from requirements of gems
+
 == Version 1.0.0
 * Updating to rubygems 2
 

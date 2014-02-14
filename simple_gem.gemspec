@@ -24,8 +24,7 @@ Gem::Specification.new do |s|
   s.files = Dir[ 'lib/**/*.rb', 'templates/**/*', 'README.rdoc', 'CHANGELOG.rdoc', 'LICENCE.txt' ]
 
   # dependencies
-  s.add_dependency 'activesupport', '~> 3.0'
+  s.add_dependency 'activesupport', '>= 3.0'
   s.add_dependency 'rake', '>= 0.8.7'
-  s.add_dependency 'rspec', '~> 2.8'
 
 end
