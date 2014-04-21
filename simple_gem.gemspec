@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.authors = [ 'David Dawson' ]
   s.email = %q{daws23@gmail.com}
   s.homepage = %q{https://github.com/daws/simple_gem}
+  s.license = 'MIT'
   s.require_paths = [ 'lib' ]
   
   # documentation
